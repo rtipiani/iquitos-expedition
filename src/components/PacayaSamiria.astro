@@ -1,0 +1,70 @@
+---
+const tours = [
+    {
+        image: "/../tours/pacayasamiria1.png",
+        title: "Tours Reserva Nacional Pacaya Samiria (3D/2N) - Desde Yurimaguas",
+        description: "Embárcate en una aventura de tres días en la Reserva Nacional Pacaya Samiria, explorando la rica biodiversidad y la belleza natural desde Yurimaguas.",
+        link: "./tours-pacaya-samiria/tour-3-dias-2-noches"
+    },
+    {
+        image: "/../tours/pacayasamiria2.png",
+        title: "Tours Reserva Nacional Pacaya Samiria (4D/3N) - Desde Iquitos",
+        description: "Descubre la magia de la Amazonía en un tour de cuatro días por la Reserva Nacional Pacaya Samiria, donde la aventura y la naturaleza se unen desde Iquitos.",
+        link: "./tours-pacaya-samiria/tour-4-dias-3-noches"
+    },
+    {
+        image: "/../tours/pacayasamiria3.png",
+        title: "Expedición Pacaya Samiria (5D/4N) - Desde Iquitos",
+        description: "Vive una expedición de cinco días en la impresionante Reserva Nacional Pacaya Samiria, disfrutando de la fauna, flora y cultura amazónica desde Iquitos.",
+        link: "./tours-pacaya-samiria/tour-5-dias-4-noches"
+    },
+    {
+        image: "/../tours/pacayasamiria4.png",
+        title: "Tours R. N. Pacaya Samiria (6D/5N) - Desde Yurimaguas",
+        description: "Sumérgete en una experiencia de seis días en la Reserva Nacional Pacaya Samiria, explorando sus maravillas naturales y culturales desde Yurimaguas.",
+        link: "./tours-pacaya-samiria/tour-6-dias-5-noches"
+    },
+    {
+        image: "/../tours/pacayasamiria5.png",
+        title: "Tours Pacaya Samiria (8D/7N) - Desde Tarapoto",
+        description: "Disfruta de una inmersión total en la Amazonía con un tour de ocho días por la Reserva Nacional Pacaya Samiria, donde la aventura y la naturaleza te esperan desde Tarapoto.",
+        link: "./tours-pacaya-samiria/tour-8-dias-7-noches"
+    }
+];
+---
+<section class="bg-white my-12">
+    <div class="max-w-7xl mx-auto px-6 space-y-6">
+        <ul class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {tours.map((tour) => (
+            <li class="border-gray-300 text-gray-700 hover:bg-gray-100 rounded-xl border transition-colors duration-200">
+                <article>
+                    <img src={tour.image} alt={tour.title} class="w-full h-80 rounded-t-xl object-cover" loading="lazy" />
+                    <div class="w-full">
+                        <div class="flex flex-col justify-start gap-3 p-4">
+                            <h2 class="text-xl font-bold">
+                                {tour.title}
+                            </h2>
+                            <p class="text-md text-gray-700">
+                                {tour.description}
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <a href={tour.link} class="inline-flex">
+                                    <span class="bg-green-950 hover:bg-orange-600 transition-colors duration-300 py-3 px-6 text-sm font-bold text-white rounded-md">
+                                        Ver itinerario
+                                    </span>
+                                </a>
+                                <a href="https://wa.link/kn19ze" target="_blank" class="inline-flex">
+                                    <span class="border border-green-950 text-green-950 hover:bg-orange-600 hover:border-orange-600 hover:text-white transition-colors duration-300 py-3 px-6 text-sm font-bold rounded-md">
+                                        Consultar ahora
+                                        <i class="fa-brands fa-whatsapp fa-xl"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            ))}
+        </ul>
+    </div>
+</section>

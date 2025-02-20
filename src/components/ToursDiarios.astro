@@ -1,0 +1,70 @@
+---
+const tours = [
+    {
+        image: "/../tours/aventuraextrema.png",
+        title: "Aventura Extrema (Puentes Colgantes)",
+        description: "Disfruta de un emocionante recorrido por impresionantes puentes colgantes en la selva, donde la adrenalina y la belleza natural se fusionan para una experiencia inolvidable.",
+        link: "./tours-diarios/aventura-extrema"
+    },
+    {
+        image: "/../tours/quiticocha.png",
+        title: "CREA y Quiticocha",
+        description: "Explora el Proyecto de Conservación de Manatíes (CREA) y descubre la fauna local en el zoológico de Quistococha, disfrutando de su encantadora playa.",
+        link: "./tours-diarios/crea-y-quiticocha"
+    },
+    {
+        image: "/../tours/encantoamazonico.png",
+        title: "El Encanto Amazónico",
+        description: "Sumérgete en la fascinante biodiversidad de la selva, donde cada rincón revela maravillas naturales y encuentros inolvidables con la fauna local.",
+        link: "./tours-diarios/el-encanto-amazonico"
+    },
+    {
+        image: "/../tours/isladelosmonos.png",
+        title: "Isla de los Monos",
+        description: "Descubre un refugio natural donde primates viven en libertad, disfrutando de un entorno exuberante y aprendiendo sobre la rica biodiversidad de la región.",
+        link: "./tours-diarios/isla-de-los-monos"
+    },
+    {
+        image: "/../tours/mariposario.png",
+        title: "Mariposario",
+        description: "Explora un colorido santuario de mariposas, donde podrás observar diversas especies en su hábitat natural y aprender sobre su ciclo de vida y su importancia en el ecosistema.",
+        link: "./tours-diarios/mariposario"
+    }
+];
+---
+<section class="bg-white my-12">
+    <div class="max-w-7xl mx-auto px-6 space-y-6">
+        <ul class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {tours.map((tour) => (
+            <li class="border-gray-300 text-gray-700 hover:bg-gray-100 rounded-xl border transition-colors duration-200">
+                <article>
+                    <img src={tour.image} alt={tour.title} class="w-full h-80 rounded-t-xl object-cover" loading="lazy" />
+                    <div class="w-full">
+                        <div class="flex flex-col justify-start gap-3 p-4">
+                            <h2 class="text-xl font-bold">
+                                {tour.title}
+                            </h2>
+                            <p class="text-md text-gray-700">
+                                {tour.description}
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <a href={tour.link} class="inline-flex">
+                                    <span class="bg-green-950 hover:bg-orange-600 transition-colors duration-300 py-3 px-6 text-sm font-bold text-white rounded-md">
+                                        Ver itinerario
+                                    </span>
+                                </a>
+                                <a href="https://wa.link/kn19ze" target="_blank" class="inline-flex">
+                                    <span class="border border-green-950 text-green-950 hover:bg-orange-600 hover:border-orange-600 hover:text-white transition-colors duration-300 py-3 px-6 text-sm font-bold rounded-md">
+                                        Consultar ahora
+                                        <i class="fa-brands fa-whatsapp fa-xl"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            ))}
+        </ul>
+    </div>
+</section>

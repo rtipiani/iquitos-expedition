@@ -1,0 +1,191 @@
+---
+const tour = {
+    image: "/../tours/toursdiariosencantoamazonico.png",
+    title: "El Encanto Amazónico.",
+};
+
+const relatedTours = [
+    {
+        image: "/../tours/aventuraextrema.png",
+        title: "Aventura Extrema (Puentes Colgantes)",
+        duration: "Tours Diarios",
+        link: "../tours-diarios/aventura-extrema",
+    },
+    {
+        image: "/../tours/isladelosmonos.png",
+        title: "Isla de los Monos",
+        duration: "Tours Diarios",
+        link: "../tours-diarios/isla-de-los-monos",
+    },
+    {
+        image: "/../tours/quiticocha.png",
+        title: "CREA y Quiticocha",
+        duration: "Tours Diarios",
+        link: "../tours-diarios/crea-y-quiticocha",
+    },
+];
+
+const accordionItems = [
+    {
+        title: "Nuestro Servicio Incluye",
+        content: [
+            "Recojo del hotel al puerto.",
+            "Guía profesional.",
+            "Entradas a los lugares a visitar.",
+            "Transporte fluvial equipado.",
+            "Equipo de seguridad.",
+            "Botiquín de primeros auxilios.",
+            "Atención personalizada."
+        ]
+    },
+    {
+        title: "Nuestro Servicio No Incluye",
+        content: [
+            "Hotel.",
+            "Pasajes aéreos.",
+            "Alimentación.",
+            "Entre otros no mencionados."
+        ]
+    },
+    {
+        title: "Qué Traer con Usted",
+        content: [
+            "Ropa ligera.",
+            "Repelente.",
+            "Bloqueador.",
+            "Cámara fotográfica.",
+            "Lentes de sol.",
+            "Chaqueta de lluvia.",
+            "Gorro o sombrero.",
+            "Botiquín personal."
+        ]
+    }
+];
+---
+<section class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-10 my-16">
+    <div class="lg:col-span-2 space-y-4">
+        <div class="flex items-center gap-2 mb-4">
+            <a href="#" onclick="history.back()" class="flex items-center text-green-950 hover:text-orange-600 transition-all font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+                </svg>
+                Volver
+            </a>
+        </div>
+        <img src={tour.image} alt={tour.title} class="w-full h-60 sm:h-80 object-cover rounded-xl shadow-md" />
+
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <h1 class="text-xl sm:text-3xl font-bold text-gray-900 leading-tight">
+                {tour.title}
+            </h1>
+            <a href="https://wa.link/78onrq" 
+               class="mt-4 sm:mt-0 w-full sm:w-auto text-center bg-green-950 hover:bg-orange-600 transition-all py-2 px-4 text-white font-medium rounded-md" target="_blank">
+                Consultar ahora
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+        </div>
+
+        <div class="space-y-4">
+            <ul class="list-disc list-inside text-gray-700 space-y-2">
+                <li class="indent-[-1.5em] pl-[1.5em]">
+                    Recojo de su hotel y traslado al puerto de Bellavista Nanay (tour gastronómico exprés:
+                    <br /> 
+                    <strong>
+                        tacacho, suri, pescados y caimán a la parrilla).
+                    </strong>
+                </li>
+                <li class="indent-[-1.5em] pl-[1.5em]">
+                    Viaje por el río Nanay 
+                    <strong>
+                        (importante río de aguas oscuras)
+                    </strong>.
+                </li>
+                <li class="indent-[-1.5em] pl-[1.5em]">
+                    Navegación por el río Momón
+                    <strong>
+                        (río mediano de aguas marrones)
+                    </strong>.
+                </li>
+                <li class="indent-[-1.5em] pl-[1.5em]">
+                    Trapiche del Momón
+                    <strong>
+                        (centro de tragos afrodisíacos y medicina tradicional)
+                    </strong>.
+                </li>
+                <li class="indent-[-1.5em] pl-[1.5em]">
+                    Serpentario Javier
+                    <strong>
+                        (santuario de animales: observación de oso perezoso, anaconda, etc.)
+                    </strong>.
+                </li>
+                <li class="indent-[-1.5em] pl-[1.5em]">
+                    Acuario de peces ornamentales, experiencia exótica con anguila eléctrica.
+                </li>
+                <li class="indent-[-1.5em] pl-[1.5em]">
+                    Comunidad nativa Bora
+                    <strong>
+                        (danzas típicas, artesanía)
+                    </strong>.
+                </li>
+                <li class="indent-[-1.5em] pl-[1.5em]">
+                    Mirador Amazolandia
+                    <strong>
+                        (spots para fotos)
+                    </strong>.
+                </li>
+                <li class="indent-[-1.5em] pl-[1.5em]">
+                    Traslado de retorno a la ciudad de Iquitos.
+                </li>
+            </ul>
+        </div>
+
+        <div class="space-y-4">
+            {accordionItems.map((item) => (
+                <details class="bg-blue-50 rounded-lg shadow-sm p-4">
+                    <summary class="text-lg sm:text-xl font-semibold cursor-pointer text-green-950">
+                        {item.title}
+                    </summary>
+                    <ul class="mt-2 space-y-1 text-gray-700">
+                        {item.content.map((text) => (
+                            <li class="ml-4 list-disc">{text}</li>
+                        ))}
+                    </ul>
+                </details>
+            ))}
+        </div>
+        <div class="flex flex-col">
+            <a href="https://wa.link/78onrq" class="mt-2 w-full text-center bg-green-950 hover:bg-orange-600 transition-all py-2 px-4 text-white font-medium rounded-md" target="_blank">
+                Consultar ahora
+                <i class="fa-brands fa-whatsapp fa-xl"></i>
+            </a>
+        </div>
+    </div>
+
+    <aside class="lg:col-span-1 order-last lg:order-none sticky top-10 space-y-6 self-start">
+        <h3 class="text-xl sm:text-2xl text-center font-bold text-gray-900">
+            También te <br /> puede interesar
+        </h3>
+        <div class="max-h-[670px] overflow-y-auto space-y-4 scrollbar-thin scrollbar-thumb-green-300 scrollbar-track-green-100">
+            {relatedTours.map((tour) => (
+                <a href={tour.link} class="block border rounded-xl overflow-hidden shadow-md transition-transform transform hover:shadow-lg bg-white">
+                    <img src={tour.image} alt={tour.title} class="w-full h-32 sm:h-40 object-cover"/>
+                    
+                    <div class="bg-green-950 text-white text-sm flex justify-center gap-2 py-2">
+                        <span class="flex items-center">
+                            <i class="fa-solid fa-calendar-check mr-2"></i>
+                            {tour.duration}
+                        </span>
+                    </div>
+
+                    <div class="p-4 text-center">
+                        <h4 class="text-lg font-semibold text-gray-900">{tour.title}</h4>
+                        
+                        <span class="mt-3 inline-block bg-green-950 hover:bg-green-800 transition-all py-2 px-4 text-white font-medium rounded-md">
+                            Ver itinerario
+                        </span>
+                    </div>
+                </a>
+            ))}
+        </div>
+    </aside>
+</section>

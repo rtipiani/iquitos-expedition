@@ -1,0 +1,99 @@
+<section class="bg-white p-8 max-w-7xl mx-auto">
+    <div class="p-8 bg-gray-50 rounded-md mb-8">
+        <div class="text-center space-y-2 mb-8">
+            <h2 class="text-zinc-900 text-3xl font-medium text-center">
+                Ponte en contacto con nosotros
+            </h2>
+            <p class="text-zinc-700 font-light">
+                Su dirección de correo electrónica no será publicada
+            </p>
+            <p class="text-xs text-green-800">
+                Los campos obligatorios están marcados*
+            </p>
+        </div>
+
+        <form id="contact-form" class="md:col-span-3" method="POST" action="/enviar-mensaje">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="name" class="text-sm text-gray-500">Nombre y Apellidos</label>
+                    <input class="p-4 border border-green-600 outline-none rounded-lg w-full" type="text" id="name" name="name" placeholder="Ingrese sus datos" required>
+                </div>
+                <div>
+                    <label for="email" class="text-sm text-gray-500">Correo electrónico</label>
+                    <input class="p-4 border border-green-600 outline-none rounded-lg w-full" type="email" id="email" name="email" placeholder="Ingrese un correo electrónico" required>
+                </div>
+                <div>
+                    <label for="telephone" class="text-sm text-gray-500">Número telefónico</label>
+                    <input class="p-4 border border-green-600 outline-none rounded-lg w-full" type="text" id="telephone" name="telephone" placeholder="Ingrese un número telefónico" required>
+                </div>
+                <div>
+                    <label for="subject" class="text-sm text-gray-500">Asunto</label>
+                    <input class="p-4 border border-green-600 outline-none rounded-lg w-full" type="text" id="subject" name="subject" placeholder="Ingrese el asunto" required>
+                </div>
+                <div class="md:col-span-2">
+                    <label for="message" class="text-sm text-gray-500">Mensaje</label>
+                    <textarea class="p-4 border border-green-600 outline-none rounded-lg w-full" id="message" name="message" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                </div>
+            </div>
+            <div class="mt-4 text-center">
+                <button type="submit" class="py-4 px-8 text-center bg-green-950 bg-opacity-95 hover:bg-opacity-100 transition-opacity duration-500 rounded-md text-white text-md cursor-pointer">
+                    Enviar mensaje
+                    <i class="fa-solid fa-location-arrow ml-2"></i>
+                </button>
+            </div>
+        </form>
+
+        <p id="form-status" class="text-center text-sm text-green-700 mt-4 hidden"></p>
+    </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("contact-form") as HTMLFormElement | null;
+        const statusMessage = document.getElementById("form-status") as HTMLParagraphElement | null;
+
+        if (!form || !statusMessage) return;
+
+        form.addEventListener("submit", (event: Event) => {
+            event.preventDefault();
+
+            const formData = new FormData(form);
+            const data: Record<string, string> = Object.fromEntries(formData.entries()) as Record<string, string>;
+
+            // Validaciones básicas
+            if (!data.name || !data.email || !data.telephone || !data.subject || !data.message) {
+                alert("Todos los campos son obligatorios.");
+                return;
+            }
+
+            if (!/^\S+@\S+\.\S+$/.test(data.email)) {
+                alert("Ingrese un correo electrónico válido.");
+                return;
+            }
+
+            if (!/^\d{9,15}$/.test(data.telephone)) {
+                alert("Ingrese un número de teléfono válido (9-15 dígitos).");
+                return;
+            }
+
+            // Envío de datos con Fetch
+            fetch("/enviar-mensaje", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            })
+            .then(response => {
+                if (response.ok) {
+                    statusMessage.textContent = "Mensaje enviado correctamente.";
+                    statusMessage.classList.remove("hidden");
+                    form.reset();
+                } else {
+                    alert("Error al enviar el formulario.");
+                }
+            })
+            .catch(() => {
+                alert("Hubo un problema con el envío.");
+            });
+        });
+    });
+</script>

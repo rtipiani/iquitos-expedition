@@ -1,0 +1,184 @@
+---
+const tour = {
+    image: "/../tours/irapay3d2n.png",
+    title: "Iquitos Relax (3D/2N)",
+    itinerary: [
+        {
+            day: "Día 1",
+            title: "Recojo del aeropuerto Irapay Amazon Lodge / Tour los Boras",
+            parrafo1: "Personal de Iquitos Expedition, estará esperando en el Parqueo del Aeropuerto de Iquitos, para decepcionarlo, y trasladarlo al Puerto de Nanay por el tiempo de 40 minutos, donde nuestro Bote Rápido, lo trasladará a nuestro Lodge de Lujo Irapay Amazon Lodge. Por el Rio Nanay y Momon, por el tiempo de 40 minutos por medio la Selva, observando paisajes impresionantes, llegada y acomodación en sus respectivas cabañas. Almuerzo libre por el pasajero.",
+            parrafo2: "Nuestro Tour Inicia a las 2:30 Pm. Nuestro Guía pasara por ustedes, para llevarlos a visitar la comunidad nativa los Boras, donde podremos danzar y disfrutar de sus costumbres ancestrales, también podremos comprar artesanía y cosas del Lugar. Regreso al Lodge. Cena libre por el Pasajero."
+        },
+        {
+            day: "Día 2",
+            title: "Tour Isla de los Monos / Fundo Pedrito los Yaguas",
+            parrafo1: "Desayuno en el Lodge.",
+            parrafo2: "Inicio a nuestra aventura a las 9:00 Am. Navegando en bote típico y observando el primer atractivo natural, la unión de los ríos Nanay y Amazonas. Continuamos el viaje por el “Rio Amazonas”, hasta llegar a la “ISLA DE LOS MONOS” donde observaremos variedades de primates libres en su habitad, hora indicada almuerzo en Restaurante Flotante a base de pescado, ensalada de chonta, frutas de la selva, refresco.",
+            parrafo3: "Al retorno visitaremos la comunidad de nativos Yagua para conocer su historia y costumbres. No podía faltar la gran experiencia de conocer animales de la selva, visitaremos el centro de rescate Fundo Pedrito, toma fotográfica a la impresionante Anaconda. Ya retornando por el río podremos apreciar el hermoso Atardecer Amazónico sobre el Rio Amazonas (postales de lujo). Retorno al Lodge. Opcional Tour Nocturno."
+        },
+        {
+            day: "Día 3",
+            title: "Tour Amanecer en el Amazonas, Observación de delfines, Tour Serpentario / Traslado al Aeropuerto",
+            parrafo1: "Salimos 5 Am. Desde el Lodge, para dirigirnos a una parte del Rio Amazonas, donde podremos Observar el Amanecer Amazónico, disfrutaremos del lugar, observaremos delfines, Rosados y gris en su habita natural, Podremos pescar Pirañas. Luego regreso a Irapay. Desayuno. Tiempo libre para disfrutar las áreas del Lodge. 11.00 Am. Nos dirigiremos al serpentario, se podrá apreciar diversidad de serpientes, Boas, Anacondas y también Osos Perezosos, Guacamayos, Tucanes y la Tortuga Prehistórica. Luego nos trasladamos al Frio y al Fuego, para almuerzo de despedida. Visita el centro Histórico, fotos en la Plaza de Armas. Traslado al Aeropuerto."
+        }
+    ],
+};
+
+const relatedTours = [
+    {
+        image: "/../tours/cumaceba1.png",
+        title: "Cumaceba Lodge (3D/2N)",
+        duration: "3 días | 2 noches",
+        link: "../tours-cumaceba-lodge/tour-3-dias-2-noches",
+    },
+    {
+        image: "/../tours/inolvidablerioamazonas.png",
+        title: "Inolvidable Río Amazonas (3D/2N)",
+        duration: "3 días | 2 noches",
+        link: "../tours-heliconia-lodge/inolvidable-rio-amazonas-3-dias-2-noches",
+    },
+    {
+        image: "/../tours/pacayasamiria1.png",
+        title: "Tours Reserva Nacional Pacaya Samiria (3D/2N) - Desde Yurimaguas",
+        duration: "3 días | 2 noches",
+        link: "../tours-pacaya-samiria/tour-3-dias-2-noches",
+    },
+];
+
+const accordionItems = [
+    {
+        title: "Nuestro Servicio Incluye",
+        content: [
+            "Recojo del Aeropuerto Lodge Aeropuerto.",
+            "Hotel 2 Noches en Irapay Amazon Lodge.",
+            "Desayunos.",
+            "Guía Profesional.",
+            "Transporte Fluvial privado.",
+            "Almuerzo Típico 1 Día.",
+            "Botas de Jebe.",
+            "Botiquín de Primeros Auxilios.",
+            "Atención Personalizada Iquitos Expedition."
+        ]
+    },
+    {
+        title: "Nuestro Servicio No Incluye",
+        content: [
+            "Vuelos.",
+            "Cenas.",
+            "Bebidas.",
+            "Hotel en la ciudad.",
+            "Entre otros no mencionados."
+        ]
+    },
+    {
+        title: "Qué Traer con Usted",
+        content: [
+            "Ropa Ligera.",
+            "Chaqueta de Lluvia.",
+            "Repelente.",
+            "Bloqueador Solar.",
+            "Camisa Mangalarga.",
+            "Ropa de baño.",
+            "Sombrero o Gorra.",
+            "Cámara fotográfica.",
+            "Lentes de Sol.",
+            "Caña de Pescar. (Opcional)",
+            "Buen Ánimo."
+        ]
+    }
+];
+---
+<section class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-3 gap-10 my-16">
+    <div class="lg:col-span-2 space-y-4">
+        <div class="flex items-center gap-2 mb-4">
+            <a href="#" onclick="history.back()" class="flex items-center text-green-950 hover:text-orange-600 transition-all font-medium">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+                </svg>
+                Volver
+            </a>
+        </div>
+        <img src={tour.image} alt={tour.title} class="w-full h-60 sm:h-80 object-cover rounded-xl shadow-md" />
+
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <h1 class="text-xl sm:text-3xl font-bold text-gray-900 leading-tight">
+                {tour.title}
+            </h1>
+            <a href="https://wa.link/akw0yz" 
+               class="mt-4 sm:mt-0 w-full sm:w-auto text-center bg-green-950 hover:bg-orange-600 transition-all py-2 px-4 text-white font-medium rounded-md" target="_blank">
+                Consultar ahora
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+        </div>
+
+        <div class="space-y-4">
+            {tour.itinerary.map((item) => (
+                <div class="bg-gray-50 p-2 rounded-lg shadow-sm">
+                    <h2 class="text-lg sm:text-xl font-bold text-green-950 underline mb-3">
+                        {item.day}. {item.title}
+                    </h2>
+                    <div class="space-y-4">
+                        {[
+                            item.parrafo1,
+                            item.parrafo2,
+                            item.parrafo3
+                            ]
+                            .filter((parrafo) => parrafo)
+                            .map((parrafo) => (
+                            <p class="text-gray-700 leading-relaxed">{parrafo}</p>
+                        ))}
+                    </div>
+                </div>
+            ))}
+        </div>
+
+        <div class="space-y-4">
+            {accordionItems.map((item) => (
+                <details class="bg-blue-50 rounded-lg shadow-sm p-4">
+                    <summary class="text-lg sm:text-xl font-semibold cursor-pointer text-green-950">
+                        {item.title}
+                    </summary>
+                    <ul class="mt-2 space-y-1 text-gray-700">
+                        {item.content.map((text) => (
+                            <li class="ml-4 list-disc">{text}</li>
+                        ))}
+                    </ul>
+                </details>
+            ))}
+        </div>
+        <div class="flex flex-col">
+            <a href="https://wa.link/akw0yz" class="mt-2 w-full text-center bg-green-950 hover:bg-orange-600 transition-all py-2 px-4 text-white font-medium rounded-md" target="_blank">
+                Consultar ahora
+                <i class="fa-brands fa-whatsapp fa-xl"></i>
+            </a>
+        </div>
+    </div>
+
+    <aside class="lg:col-span-1 order-last lg:order-none sticky top-10 space-y-6 self-start">
+        <h3 class="text-xl sm:text-2xl text-center font-bold text-gray-900">
+            También te <br /> puede interesar
+        </h3>
+        <div class="max-h-[670px] overflow-y-auto space-y-4 scrollbar-thin scrollbar-thumb-green-300 scrollbar-track-green-100">
+            {relatedTours.map((tour) => (
+                <a href={tour.link} class="block border rounded-xl overflow-hidden shadow-md transition-transform transform hover:shadow-lg bg-white">
+                    <img src={tour.image} alt={tour.title} class="w-full h-32 sm:h-40 object-cover"/>
+                    
+                    <div class="bg-green-950 text-white text-sm flex justify-center gap-2 py-2">
+                        <span class="flex items-center">
+                            <i class="fa-solid fa-calendar-check mr-2"></i>
+                            {tour.duration}
+                        </span>
+                    </div>
+
+                    <div class="p-4 text-center">
+                        <h4 class="text-lg font-semibold text-gray-900">{tour.title}</h4>
+                        
+                        <span class="mt-3 inline-block bg-green-950 hover:bg-green-800 transition-all py-2 px-4 text-white font-medium rounded-md">
+                            Ver itinerario
+                        </span>
+                    </div>
+                </a>
+            ))}
+        </div>
+    </aside>
+</section>

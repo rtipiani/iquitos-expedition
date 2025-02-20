@@ -1,0 +1,58 @@
+---
+const tours = [
+    {
+        image: "/../tours/cumaceba1.png",
+        title: "Cumaceba Lodge (3D/2N)",
+        description: "Disfruta de una escapada de tres días en el Cumaceba Lodge, donde la naturaleza, la comodidad y la aventura se fusionan en un entorno espectacular, lleno de experiencias inolvidables y momentos únicos.",
+        link: "./tours-cumaceba-lodge/tour-3-dias-2-noches"
+    },
+    {
+        image: "/../tours/cumaceba2.png",
+        title: "Cumaceba Lodge (4D/3N)",
+        description: "Sumérgete en una experiencia de cuatro días en Cumaceba Lodge, explorando la selva, disfrutando de actividades emocionantes y relajándote en un entorno natural impresionante.",
+        link: "./tours-cumaceba-lodge/tour-4-dias-3-noches"
+    },
+    {
+        image: "/../tours/cumaceba3.png",
+        title: "Cumaceba Lodge (5D/4N)",
+        description: "Este recorrido está diseñado para sumergirte en la riqueza y diversidad de la selva peruana, brindándote una experiencia única y memorable que te hará sentir conectado con la naturaleza.",
+        link: "./tours-cumaceba-lodge/tour-5-dias-4-noches"
+    }
+];
+---
+<section class="bg-white my-12">
+    <div class="max-w-7xl mx-auto px-6 space-y-6">
+        <ul class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {tours.map((tour) => (
+            <li class="border-gray-300 text-gray-700 hover:bg-gray-100 rounded-xl border transition-colors duration-200">
+                <article>
+                    <img src={tour.image} alt={tour.title} class="w-full h-80 rounded-t-xl object-cover" loading="lazy" />
+                    <div class="w-full">
+                        <div class="flex flex-col justify-start gap-3 p-4">
+                            <h2 class="text-xl font-bold">
+                                {tour.title}
+                            </h2>
+                            <p class="text-md text-gray-700">
+                                {tour.description}
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <a href={tour.link} class="inline-flex">
+                                    <span class="bg-green-950 hover:bg-orange-600 transition-colors duration-300 py-3 px-6 text-sm font-bold text-white rounded-md">
+                                        Ver itinerario
+                                    </span>
+                                </a>
+                                <a href="https://wa.link/kn19ze" target="_blank" class="inline-flex">
+                                    <span class="border border-green-950 text-green-950 hover:bg-orange-600 hover:border-orange-600 hover:text-white transition-colors duration-300 py-3 px-6 text-sm font-bold rounded-md">
+                                        Consultar ahora
+                                        <i class="fa-brands fa-whatsapp fa-xl"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            ))}
+        </ul>
+    </div>
+</section>
