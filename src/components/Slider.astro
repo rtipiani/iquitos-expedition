@@ -7,12 +7,34 @@ const slides = [
     { image: "../../slide5.avif", title: "HELICONIA AMAZON LODGE", buttonText: "Consultar Ahora" },
     { image: "../../slide6.avif", title: "IRAPAY AMAZON LODGE", buttonText: "Consultar Ahora" }
 ];
+
+// Generar srcset automáticamente
+const generateSrcSet = (image: string): string => `
+    ${image.replace('.avif', '-355w.avif')} 355w,
+    ${image.replace('.avif', '-852w.avif')} 852w,
+    ${image.replace('.avif', '-1278w.avif')} 1278w,
+    ${image.replace('.avif', '-1680w.avif')} 1680w,
+    ${image.replace('.avif', '-2000w.avif')} 2000w,
+    ${image.replace('.avif', '-2268w.avif')} 2268w
+`;
+
+const sizes = `
+    (max-width: 400px) 355px,
+    (max-width: 900px) 852px,
+    (max-width: 1400px) 1278px,
+    (max-width: 1800px) 1680px,
+    (max-width: 2200px) 2000px,
+    2268px
+`;
 ---
 <div class="relative w-full h-screen overflow-hidden">
     <div id="slider" class="flex transition-transform duration-700 ease-in-out w-full h-full">
         {slides.map((slide, index) => (
             <div class="w-full h-full flex-shrink-0 relative aspect-[16/9]" data-slide={index}>
-                <img src={slide.image} alt={slide.title} width="1920" height="1080" class="w-full h-full object-cover" loading="eager" />
+                <picture>
+                    <source srcset={generateSrcSet(slide.image)} sizes={sizes} type="image/avif" />
+                    <img src={slide.image} alt={slide.title} width="1920" height="1080" class="w-full h-full object-cover" loading="eager" />
+                </picture>
                 <div class="absolute inset-0 flex flex-col items-center justify-center text-white bg-black/40">
                     <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 text-center px-4 leading-snug sm:leading-tight md:leading-normal max-w-[80%] sm:max-w-[60%] lg:max-w-[50%]">
                         {slide.title}
