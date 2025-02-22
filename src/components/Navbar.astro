@@ -149,13 +149,17 @@
             if (href && href !== "/") {
                 if (currentPath.startsWith(href)) {
                     link.classList.add("text-yellow-400", "font-bold");
+                    link.classList.remove("text-white");
                 } else {
                     link.classList.remove("text-yellow-400", "font-bold");
+                    link.classList.add("text-white");
                 }
             } else if (href === "/" && currentPath === "/") {
                 link.classList.add("text-yellow-400", "font-bold");
+                link.classList.remove("text-white");
             } else {
                 link.classList.remove("text-yellow-400", "font-bold");
+                link.classList.add("text-white");
             }
         });
     });
