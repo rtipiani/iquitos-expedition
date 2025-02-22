@@ -141,10 +141,10 @@
             });
         }
 
-        const currentPath = window.location.pathname;
+        const currentPath = window.location.pathname.toLowerCase();
 
         menuLinks.forEach(link => {
-            const href = link.getAttribute("href");
+            const href = link.getAttribute("href")?.toLowerCase();
 
             if (href && href !== "/") {
                 if (currentPath.startsWith(href)) {
