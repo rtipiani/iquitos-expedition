@@ -1,11 +1,11 @@
 ---
 const slides = [
-    { image: "../../slide1.avif", title: "BIENVENIDOS A LA AMAZONÍA", buttonText: "Consultar Ahora" },
-    { image: "../../slide2.avif", title: "ISLA DE LOS MONOS", buttonText: "Consultar Ahora" },
-    { image: "../../slide3.avif", title: "DESCUBRAMOS PACAYA SAMIRIA", buttonText: "Consultar Ahora" },
-    { image: "../../slide4.avif", title: "EXPLOREMOS LAS COMODIDADES NATIVAS", buttonText: "Consultar Ahora" },
-    { image: "../../slide5.avif", title: "HELICONIA AMAZON LODGE", buttonText: "Consultar Ahora" },
-    { image: "../../slide6.avif", title: "IRAPAY AMAZON LODGE", buttonText: "Consultar Ahora" }
+    { image: "../../slide1.avif", title: "BIENVENIDOS A LA AMAZONÍA", buttonText: "Consultar Ahora", position: "object-right" },
+    { image: "../../slide2.avif", title: "ISLA DE LOS MONOS", buttonText: "Consultar Ahora", position: "object-center" },
+    { image: "../../slide3.avif", title: "DESCUBRAMOS PACAYA SAMIRIA", buttonText: "Consultar Ahora", position: "object-[30%_50%]" },
+    { image: "../../slide4.avif", title: "EXPLOREMOS LAS COMODIDADES NATIVAS", buttonText: "Consultar Ahora", position: "object-[40%_30%]" },
+    { image: "../../slide5.avif", title: "HELICONIA AMAZON LODGE", buttonText: "Consultar Ahora", position: "object-[30%_50%]" },
+    { image: "../../slide6.avif", title: "IRAPAY AMAZON LODGE", buttonText: "Consultar Ahora", position: "object-bottom" }
 ];
 
 // Generar srcset automáticamente
@@ -35,7 +35,7 @@ const sizes = `
             <div class="w-full h-full flex-shrink-0 relative aspect-[16/9]" data-slide={index}>
                 <picture>
                     <source srcset={generateSrcSet(slide.image)} sizes={sizes} type="image/avif" />
-                    <img src={slide.image} alt={slide.title} width="1920" height="1080" class="w-full h-full object-cover" loading="lazy" />
+                    <img src={slide.image} alt={slide.title} width="1920" height="1080" class={`w-full h-full object-cover ${slide.position}`} loading="lazy" />
                 </picture>
                 <div class="absolute inset-0 flex flex-col items-center justify-center text-white bg-black/40">
                     <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 text-center px-4 leading-snug sm:leading-tight md:leading-normal max-w-[80%] sm:max-w-[60%] lg:max-w-[50%]">
