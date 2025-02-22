@@ -127,7 +127,6 @@
 
         actividadSelect.disabled = true;
 
-        // Llenar el select de programas
         programas.forEach(programa => {
             const option = document.createElement("option");
             option.value = programa.id;
@@ -157,8 +156,7 @@
             if (!fechaStr) return "";
 
             const meses = [
-                "enero", "febrero", "marzo", "abril", "mayo", "junio",
-                "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
+                "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
             ];
 
             const nuevaFecha = new Date(fechaStr);
