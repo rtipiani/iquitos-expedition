@@ -7,12 +7,12 @@
             <p class="text-zinc-700 font-light">
                 Su dirección de correo electrónica no será publicada
             </p>
-            <p class="text-xs text-green-800">
+            <p class="text-xs text-orange-600">
                 Los campos obligatorios están marcados*
             </p>
         </div>
 
-        <form id="contact-form" class="md:col-span-3" method="POST" action="/enviar-mensaje">
+        <form id="contact-form" class="md:col-span-3" method="POST" action="/send-email">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <label for="name" class="text-sm text-gray-500">
@@ -87,7 +87,7 @@
             }
 
             // Envío de datos con Fetch
-            fetch("/enviar-mensaje", {
+            fetch("/send-email", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(data),
