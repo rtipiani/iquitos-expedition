@@ -1,0 +1,139 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "^/_astro/(.*)$",
+			"headers": {
+				"cache-control": "public, max-age=31536000, immutable"
+			},
+			"continue": true
+		},
+		{
+			"src": "^/_server-islands/([^/]+?)/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/_image/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/about/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/api/send-email/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/contacts/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/gallery/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/cumaceba-lodge/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/heliconia-lodge/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/irapay-amazon/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/pacaya-samiria/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/tours-cumaceba-lodge/tour-3-dias-2-noches/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/tours-cumaceba-lodge/tour-4-dias-3-noches/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/tours-cumaceba-lodge/tour-5-dias-4-noches/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/tours-diarios/aventura-extrema/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/tours-diarios/crea-y-quiticocha/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/tours-diarios/el-encanto-amazonico/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/tours-diarios/isla-de-los-monos/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/tours-diarios/mariposario/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/tours-diarios/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/tours-heliconia-lodge/cultura-y-aventuras-en-la-selva-5-dias-4-noches/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/tours-heliconia-lodge/descubre-las-maravillas-de-la-amazonia-4-dias-3-noches/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/tours-heliconia-lodge/inolvidable-rio-amazonas-3-dias-2-noches/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/tours-irapay-amazon/explorando-el-amazonas-4-dias-3-noches/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/tours-irapay-amazon/iquitos-de-aventura-5-dias-4-noches/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/tours-irapay-amazon/iquitos-relax-3-dias-2-noches/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/tours-pacaya-samiria/tour-3-dias-2-noches/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/tours-pacaya-samiria/tour-4-dias-3-noches/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/tours-pacaya-samiria/tour-5-dias-4-noches/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/tours-pacaya-samiria/tour-6-dias-5-noches/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/paquetes/tours-pacaya-samiria/tour-8-dias-7-noches/?$",
+			"dest": "_render"
+		},
+		{
+			"src": "^/$",
+			"dest": "_render"
+		}
+	]
+}
