@@ -1,43 +1,36 @@
+import { Resend } from "resend";
 import type { APIRoute } from "astro";
-import nodemailer from "nodemailer";
+
+export const prerender = false;
+
+const resend = new Resend(import.meta.env.RESEND_API_KEY); // Usa la API Key desde el .env
 
 export const POST: APIRoute = async ({ request }) => {
     try {
-        const formData = await request.json();
-        const { name, email, telephone, subject, message } = formData;
+        const data = await request.json();
         
-        if (!name || !email || !telephone || !subject || !message) {
-            return new Response(JSON.stringify({ error: "Todos los campos son obligatorios." }), {status: 400});
+        console.log("📩 Datos recibidos:", data);
+
+        if (!data.name || !data.email || !data.subject || !data.message) {
+            return new Response(JSON.stringify({ error: "Todos los campos son obligatorios" }), { status: 400 });
         }
 
-        const transporter = nodemailer.createTransport({
-            host: process.env.SMTP_HOST,
-            port: Number(process.env.SMTP_PORT) || 465,
-            secure: process.env.SMTP_PORT === "465",
-            auth: {
-                user: process.env.SMTP_USER,
-                pass: process.env.SMTP_PASS
-            },
+        // Enviar el correo con Resend
+        const emailResponse = await resend.emails.send({
+            from: `Tu Empresa <${import.meta.env.RESEND_FROM}>`, // Dirección de correo verificada en Resend
+            to: [import.meta.env.MAIL_TO], // Destinatario
+            subject: data.subject,
+            text: `Nombre: ${data.name}\nEmail: ${data.email}\nMensaje:\n${data.message}`,
+            html: `<p><strong>Nombre:</strong> ${data.name}</p>
+                   <p><strong>Email:</strong> ${data.email}</p>
+                   <p><strong>Mensaje:</strong> ${data.message}</p>`
         });
 
-        const mailOptions = {
-            from: `"${name}" <${email}>`,
-            to: "reservas@iquitosexpedition.com",
-            subject: `Nuevo mensaje de contacto: ${subject}`,
-            text: `Nombre: ${name}\nEmail: ${email}\nTeléfono: ${telephone}\nMensaje: ${message}`
-        };
+        console.log("📨 Respuesta de Resend:", emailResponse);
 
-        await transporter.sendMail(mailOptions);
-        
-        return new Response(JSON.stringify({ message: "Mensaje enviado correctamente." }), {
-            status: 200,
-            headers: {
-                "Content-Type": "application/json",
-                "Access-Control-Allow-Origin": "*",
-            },
-        });
+        return new Response(JSON.stringify({ message: "Correo enviado correctamente" }), { status: 200 });
     } catch (error) {
-        console.error("Error al enviar el correo", error);
-        return new Response(JSON.stringify({ error: "Error al enviar el mensaje." }), { status: 500 });
+        console.error("❌ Error enviando correo:", error);
+        return new Response(JSON.stringify({ error: "Hubo un problema enviando el correo" }), { status: 500 });
     }
 };
