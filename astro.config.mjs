@@ -7,6 +7,7 @@ import sitemap from "astro-sitemap";
 // https://astro.build/config
 export default defineConfig({
     site: "https://iquitosexpedition.com",
+    trailingSlash: 'never',
     output: "server",
     adapter: vercel(),
     vite: {
