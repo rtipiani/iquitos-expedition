@@ -1,9 +1,9 @@
 ---
 const meta = {
-	title: "iquitosexpedition.com - Iquitos Expedition | Tours full day, paquetes ciudad, hotel y tours, Amazon Lodge todo incluido, paquetes exclusivos, pesca de pirañas, comunidades nativas, isla de los monos, perezosos, Amazon Bio Park, Crea, Quisticocha, Lodge, Irapay Amazon Lodge, anacondas y mucho más.",
+	title: "Iquitos Expedition - iquitosexpedition.com | Tours full day, paquetes ciudad, hotel y tours, Amazon Lodge todo incluido, paquetes exclusivos, pesca de pirañas, comunidades nativas, isla de los monos, perezosos, Amazon Bio Park, Crea, Quisticocha, Lodge, Irapay Amazon Lodge, anacondas y mucho más.",
 	description: "Tours full day, paquetes ciudad, hotel y tours, Amazon Lodge todo incluido, paquetes exclusivos, pesca de pirañas, comunidades nativas, isla de los monos, perezosos, anacondas, viaja de forma segura nuestro majestuoso Río Amazonas y sus encantos, somos tu mejor opción en Iquitos, disfruta de un viaje organizado y libre de estrés. ¡RESERVA TU EXPERIENCIA!",
 	url: "https://iquitosexpedition.com/",
-	image: ""
+	image: "https://iquitosexpedition.com/imagen_de_previsualizacion.avif"
 }
 import "../styles/global.css";
 ---
@@ -27,7 +27,7 @@ import "../styles/global.css";
 		<meta property="og:type" content="website" />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
-		<meta property="og:image:type" content="image/webp" />
+		<meta property="og:image:type" content="image/avif" />
 
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:title" content={meta.title} />
@@ -41,6 +41,31 @@ import "../styles/global.css";
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 		<link rel="manifest" href="/site.webmanifest">
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+		<script defer>
+			// Google Analytics
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				window.dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+			gtag('config', 'G-R3P2HY6LQP');
+		</script>
+	
+		<!-- Google Tag Manager de manera diferida -->
+		<!-- <script defer>
+			(function(w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+				var f = d.getElementsByTagName(s)[0];
+				if (f && f.parentNode) {
+				var j = d.createElement(s);
+				var dl = l !== 'dataLayer' ? '&l=' + l : '';
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+				f.parentNode.insertBefore(j, f);
+				}
+			})(window, document, 'script', 'dataLayer', 'GTM-WTWP5VQ9');
+		</script> -->
 	</head>
 	<body>
 		<div id="loader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
