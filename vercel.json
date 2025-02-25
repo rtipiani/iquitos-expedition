@@ -1,0 +1,10 @@
+{
+    "routes": [
+        {
+            "src": "/paquetes/(.*)/$",
+            "headers": { "location": "/paquetes/$1" },
+            "status": 301
+        }
+    ],
+    "trailingSlash": false
+}
