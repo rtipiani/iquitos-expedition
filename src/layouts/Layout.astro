@@ -6,6 +6,7 @@ const meta = {
 	image: "https://iquitosexpedition.com/imagen_de_previsualizacion.avif"
 }
 import "../styles/global.css";
+import  SpeedInsights  from "@vercel/speed-insights/astro";
 ---
 <!doctype html>
 <html lang="es">
@@ -50,27 +51,12 @@ import "../styles/global.css";
 			gtag('js', new Date());
 			gtag('config', 'G-R3P2HY6LQP');
 		</script>
-	
-		<!-- Google Tag Manager de manera diferida -->
-		<!-- <script defer>
-			(function(w, d, s, l, i) {
-				w[l] = w[l] || [];
-				w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
-				var f = d.getElementsByTagName(s)[0];
-				if (f && f.parentNode) {
-				var j = d.createElement(s);
-				var dl = l !== 'dataLayer' ? '&l=' + l : '';
-				j.async = true;
-				j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-				f.parentNode.insertBefore(j, f);
-				}
-			})(window, document, 'script', 'dataLayer', 'GTM-WTWP5VQ9');
-		</script> -->
 	</head>
 	<body>
 		<div id="loader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
 			<div class="w-12 h-12 border-4 border-t-orange-600 border-gray-300 rounded-full animate-spin"></div>
 		</div>
+		<SpeedInsights />
 		<slot />
 		<a href="https://wa.link/no5uic" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-30 w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center shadow-xl hover:bg-green-600 transition duration-300 transform hover:scale-110" aria-label="Ir a Whatsapp">
 			<i class="fa-brands fa-whatsapp text-2xl"></i>
