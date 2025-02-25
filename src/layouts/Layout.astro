@@ -5,6 +5,8 @@ const meta = {
 	url: "https://iquitosexpedition.com/",
 	image: "https://iquitosexpedition.com/imagen_de_previsualizacion.avif"
 }
+const { url } = Astro;
+const isContactPage = url.pathname.includes("contacts");
 import "../styles/global.css";
 import  SpeedInsights  from "@vercel/speed-insights/astro";
 ---
@@ -41,7 +43,7 @@ import  SpeedInsights  from "@vercel/speed-insights/astro";
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 		<link rel="manifest" href="/site.webmanifest">
-		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+		{isContactPage && <script src="https://www.google.com/recaptcha/api.js" async defer></script>}
 		<script defer>
 			// Google Analytics
 			window.dataLayer = window.dataLayer || [];

@@ -14,6 +14,7 @@
     "@tailwindcss/vite": "^4.0.5",
     "@vercel/speed-insights": "^1.2.0",
     "astro": "^5.2.5",
+    "astro-sitemap": "^1.0.0",
     "dotenv": "^16.4.7",
     "photoswipe": "^5.4.4",
     "resend": "^4.1.2",
