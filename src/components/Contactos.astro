@@ -78,7 +78,6 @@ declare global {
         form.addEventListener("submit", async (event) => {
             event.preventDefault();
 
-            // Deshabilitar el botón para evitar múltiples envíos
             submitButton.disabled = true;
             submitButton.classList.add("opacity-50", "cursor-not-allowed");
 
@@ -142,7 +141,6 @@ declare global {
                 statusMessage.classList.remove("hidden", "text-green-700");
                 statusMessage.classList.add("text-orange-600");
             } finally {
-                // Reactivar el botón después de recibir respuesta
                 submitButton.disabled = false;
                 submitButton.classList.remove("opacity-50", "cursor-not-allowed");
             }
