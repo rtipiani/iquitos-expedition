@@ -9,13 +9,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/vercel": "^8.0.8",
+    "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/vercel": "^9.0.2",
     "@fortawesome/fontawesome-free": "^6.7.2",
     "@tailwindcss/vite": "^4.0.5",
     "@vercel/speed-insights": "^1.2.0",
-    "astro": "^5.2.5",
-    "astro-sitemap": "^1.0.0",
+    "astro": "^5.16.6",
     "dotenv": "^16.4.7",
     "photoswipe": "^5.4.4",
     "resend": "^4.1.2",

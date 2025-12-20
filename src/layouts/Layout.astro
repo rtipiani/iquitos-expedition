@@ -1,15 +1,17 @@
 ---
 const meta = {
 	title: "Iquitos Expedition - iquitosexpedition.com | Tours full day, paquetes ciudad, hotel y tours, Amazon Lodge todo incluido, paquetes exclusivos, pesca de pirañas, comunidades nativas, isla de los monos, perezosos, Amazon Bio Park, Crea, Quisticocha, Lodge, Irapay Amazon Lodge, anacondas y mucho más.",
-	description: "Tours full day, paquetes ciudad, hotel y tours, Amazon Lodge todo incluido, paquetes exclusivos, pesca de pirañas, comunidades nativas, isla de los monos, perezosos, anacondas, viaja de forma segura nuestro majestuoso Río Amazonas y sus encantos, somos tu mejor opción en Iquitos, disfruta de un viaje organizado y libre de estrés. ¡RESERVA TU EXPERIENCIA!",
+	description:
+		"Tours full day, paquetes ciudad, hotel y tours, Amazon Lodge todo incluido, paquetes exclusivos, pesca de pirañas, comunidades nativas, isla de los monos, perezosos, anacondas, viaja de forma segura nuestro majestuoso Río Amazonas y sus encantos, somos tu mejor opción en Iquitos, disfruta de un viaje organizado y libre de estrés. ¡RESERVA TU EXPERIENCIA!",
 	url: "https://iquitosexpedition.com/",
-	image: "https://iquitosexpedition.com/imagen_de_previsualizacion.avif"
-}
+	image: "https://iquitosexpedition.com/imagen_de_previsualizacion.avif",
+};
 const { url } = Astro;
 const isContactPage = url.pathname.includes("contacts");
 import "../styles/global.css";
-import  SpeedInsights  from "@vercel/speed-insights/astro";
+import SpeedInsights from "@vercel/speed-insights/astro";
 ---
+
 <!doctype html>
 <html lang="es">
 	<head>
@@ -17,7 +19,10 @@ import  SpeedInsights  from "@vercel/speed-insights/astro";
 		<meta name="viewport" content="width=device-width" />
 		<meta name="robots" content="index, follow" />
 		<meta name="author" content="Rubén Tipiani" />
-		<meta name="copyright" content="Copyright (c) 2025, Iquitos Expedition" />
+		<meta
+			name="copyright"
+			content="Copyright (c) 2025, Iquitos Expedition"
+		/>
 		<title>
 			{meta.title}
 		</title>
@@ -39,37 +44,79 @@ import  SpeedInsights  from "@vercel/speed-insights/astro";
 		<meta property="twitter:site" content="@iquitosexpedition" />
 
 		<link rel="canonical" href={meta.url} />
-		<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-		<link rel="manifest" href="/site.webmanifest">
-		{isContactPage && <script src="https://www.google.com/recaptcha/api.js" async defer></script>}
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="/site.webmanifest" />
+		{
+			isContactPage && (
+				<script
+					src="https://www.google.com/recaptcha/api.js"
+					async
+					defer
+				/>
+			)
+		}
 		<script defer>
 			// Google Analytics
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
 				window.dataLayer.push(arguments);
 			}
-			gtag('js', new Date());
-			gtag('config', 'G-R3P2HY6LQP');
+			gtag("js", new Date());
+			gtag("config", "G-R3P2HY6LQP");
 		</script>
 	</head>
 	<body>
-		<div id="loader" class="fixed inset-0 flex items-center justify-center bg-white z-50">
-			<div class="w-12 h-12 border-4 border-t-orange-600 border-gray-300 rounded-full animate-spin"></div>
+		<div
+			id="loader"
+			class="fixed inset-0 flex items-center justify-center bg-white/30 backdrop-blur-xl z-50 transition-opacity duration-500"
+			style="display: flex; position: fixed; inset: 0; z-index: 50; background-color: rgba(255, 255, 255, 0.3); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);"
+		>
+			<div
+				class="w-12 h-12 border-4 border-t-orange-600 border-gray-300 rounded-full animate-spin"
+			>
+			</div>
 		</div>
 		<SpeedInsights />
 		<slot />
-		<a href="https://wa.link/no5uic" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-30 w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center shadow-xl hover:bg-green-600 transition duration-300 transform hover:scale-110" aria-label="Ir a Whatsapp">
+		<a
+			href="https://wa.link/no5uic"
+			target="_blank"
+			rel="noopener noreferrer"
+			class="fixed bottom-6 right-6 z-30 w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center shadow-xl hover:bg-green-600 transition duration-300 transform hover:scale-110"
+			aria-label="Ir a Whatsapp"
+		>
 			<i class="fa-brands fa-whatsapp text-2xl"></i>
 		</a>
 	</body>
 	<script>
-		window.addEventListener("load", function () {
+		function hideLoader() {
 			const loader = document.getElementById("loader");
 			if (loader) {
-				loader.classList.add("hidden");
+				loader.style.opacity = "0";
+				setTimeout(() => {
+					loader.style.display = "none";
+				}, 500);
 			}
-		});
+		}
+
+		window.addEventListener("load", hideLoader);
+		// Failsafe: Hide after 3 seconds anyway to prevent infinite loading
+		setTimeout(hideLoader, 3000);
 	</script>
 </html>
