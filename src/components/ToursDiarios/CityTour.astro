@@ -1,0 +1,248 @@
+---
+const tour = {
+    image: "/../tours/iquitosrelax.avif",
+    title: "City Tour: Centro Histórico y Mercado Belén",
+    subtitle:
+        "Esta excursión le permitirá conocer los principales atractivos turísticos de la ciudad que fueron construidos en época del caucho.",
+    itinerary: [
+        {
+            title: "Recorrido por los principales atractivos turísticos",
+            description:
+                "Recojo del hotel a las 10:00 Am. Recorrido por los principales atractivos turísticos de la ciudad, fundada en el Siglo XIX, que alcanzó su mayor auge durante la “época del caucho”. Observarán los hermosos mosaicos y balcones de hierro que fueron traídos desde Europa para adornar las grandiosas edificaciones que albergaban a los prósperos habitantes de la ciudad más representativa de la Amazonía Peruana en una época de bonanza. Podrá apreciar la llamada “Casa de Hierro”, diseñada por el renombrado Gustave Eiffel y conocer la sorprendente historia de cómo finalmente fue transportada y edificada en la plaza principal de Iquitos.",
+        },
+        {
+            title: "Boulevard y Museo Amazónico",
+            description:
+                "Conocerá el boulevard de Iquitos, lugar de concentración para habitantes y visitantes, con una vista impresionante del río Itaya y la selva. Haremos un alto en el mercado artesanal, le permitirá ver y comprar artesanías coloridas hechas con materiales que se encuentran en nuestros bosques amazónicos. Inmediatamente después visitaremos el Museo Amazónico, maravilloso lugar construido en 1863, que fue ocupado por la Comandancia General del Ejército, y luego donado a la Prefectura de Loreto. Considerado Patrimonio Histórico Cultural de la Nación, restaurado en 1999, con el tiempo se convirtió en un importante museo de historia y cultura de la región. Exhibe una hermosa decoración mural en madera tallada y un conjunto de muebles antiguos. Lo más sorprendente del museo, es la colección de 80 esculturas hechas en fibra de vidrio con representaciones en tamaño natural de las principales comunidades nativas del Amazonas del Perú, Brasil y Venezuela.",
+        },
+        {
+            title: "Mercado Belén (Opcional)",
+            description:
+                "Para terminar (recorrido opcional), visitaremos el mercado “Belen”, mercado más grande que abastece de toda clase de productos de primera necesidad, podrá conocer el famoso camu camu, la cocona, etc, frutas y verduras frescas de nuestra región amazónica. Regreso al Hotel o traslado al Restaurante Flotante al Frio y Fuego.",
+        },
+    ],
+};
+
+const accordionItems = [
+    {
+        title: "Nuestro Servicio Incluye",
+        content: [
+            "Recojo del Hotel.",
+            "Guía Profesional.",
+            "Entradas a los lugares a visitar.",
+            "Transporte.",
+            "Botiquín de Primeros Auxilios.",
+            "Atención Personalizada.",
+        ],
+    },
+    {
+        title: "Nuestro Servicio No Incluye",
+        content: [
+            "Hotel.",
+            "Pasajes Aéreos.",
+            "Alimentación.",
+            "Entre otros no Mencionados.",
+        ],
+    },
+    {
+        title: "Qué Traer con Usted",
+        content: [
+            "Ropa Ligera.",
+            "Repelente.",
+            "Bloqueador.",
+            "Cámara Fotográfica.",
+            "Lentes de Sol.",
+            "Chaqueta de Lluvia.",
+            "Gorro o Sombrero.",
+            "Botiquín Personal.",
+        ],
+    },
+];
+---
+
+<section
+    class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 my-16"
+>
+    <div class="space-y-4">
+        <div class="flex items-center gap-2 mb-4">
+            <a
+                href="#"
+                onclick="history.back()"
+                class="flex items-center text-green-950 hover:text-orange-600 transition-all font-medium"
+            >
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                    stroke="currentColor"
+                    class="w-6 h-6"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15 19l-7-7 7-7"></path>
+                </svg>
+                Volver
+            </a>
+        </div>
+        <img
+            src={tour.image}
+            alt={tour.title}
+            class="w-full h-60 sm:h-80 object-cover rounded-xl shadow-md"
+        />
+
+        <div
+            class="flex flex-col sm:flex-row sm:items-center sm:justify-between"
+        >
+            <h1
+                class="text-xl sm:text-3xl font-bold text-gray-900 leading-tight"
+            >
+                {tour.title}
+            </h1>
+        </div>
+        <p class="text-gray-700 leading-relaxed">
+            {tour.subtitle}
+        </p>
+
+        <div class="space-y-6">
+            {
+                tour.itinerary.map((item) => (
+                    <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                        <h3 class="text-lg font-bold text-green-950 mb-2">
+                            {item.title}
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            {item.description}
+                        </p>
+                    </div>
+                ))
+            }
+        </div>
+
+        <div class="space-y-4">
+            {
+                accordionItems.map((item) => (
+                    <details class="bg-blue-50 rounded-lg shadow-sm p-4">
+                        <summary class="text-lg font-semibold cursor-pointer text-green-950">
+                            {item.title}
+                        </summary>
+                        <ul class="mt-2 space-y-1 text-gray-700">
+                            {item.content.map((text) => (
+                                <li class="ml-4 list-disc">{text}</li>
+                            ))}
+                        </ul>
+                    </details>
+                ))
+            }
+        </div>
+
+        <div class="flex flex-col">
+            <a
+                href="https://wa.link/kn19ze"
+                class="mt-2 w-full text-center bg-green-950 hover:bg-orange-600 transition-all py-2 px-4 text-white font-medium rounded-md"
+                target="_blank"
+            >
+                Consultar ahora
+                <i class="fa-brands fa-whatsapp fa-xl"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="lg:col-span-1 sticky top-10 self-start">
+        <!-- Optional: Map or extra image could go here, or left empty/centered if 1 col layout is preferred. 
+             Since IslaDeLosMonos had 2 cols, sticking to that structure but adapting. -->
+        <div class="bg-white p-6 rounded-xl shadow-md border border-gray-200">
+            <h3 class="text-xl font-bold text-green-950 mb-4">
+                Resumen del Tour
+            </h3>
+            <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                    <div class="bg-green-100 p-2 rounded-full text-green-950">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="block font-semibold text-gray-900"
+                            >Duración</span
+                        >
+                        <span class="text-gray-600">Aprox. 4-5 horas</span>
+                    </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <div class="bg-green-100 p-2 rounded-full text-green-950">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                            ></path>
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="block font-semibold text-gray-900"
+                            >Ubicación</span
+                        >
+                        <span class="text-gray-600">Iquitos Ciudad y Belén</span
+                        >
+                    </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <div class="bg-green-100 p-2 rounded-full text-green-950">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                            ></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="block font-semibold text-gray-900"
+                            >Tipo</span
+                        >
+                        <span class="text-gray-600">Cultural / Histórico</span>
+                    </div>
+                </li>
+            </ul>
+            <a
+                href="https://wa.link/kn19ze"
+                target="_blank"
+                class="block w-full text-center bg-orange-600 hover:bg-green-950 transition-colors duration-300 text-white font-bold py-3 mt-6 rounded-lg"
+            >
+                Reservar Ahora
+            </a>
+        </div>
+    </div>
+</section>

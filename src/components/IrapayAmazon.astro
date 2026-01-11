@@ -3,56 +3,78 @@ const tours = [
     {
         image: "/../tours/iquitosrelax.avif",
         title: "Iquitos Relax (3D/2N)",
-        description: "Escápate a Iquitos y descubre un paraíso escondido donde la naturaleza, la comodidad y la aventura se encuentran.",
-        link: "./tours-irapay-amazon/iquitos-relax-3-dias-2-noches"
+        description:
+            "Escápate a Iquitos y descubre un paraíso escondido donde la naturaleza, la comodidad y la aventura se encuentran.",
+        link: "./tours-irapay-amazon/iquitos-relax-3-dias-2-noches",
     },
     {
         image: "/../tours/explorandoamazonas.avif",
         title: "Explorando el Amazonas (4D/3N)",
-        description: "Aventúrate en la selva amazónica y vive una experiencia única donde la biodiversidad, el confort y la emoción se unen.",
-        link: "./tours-irapay-amazon/explorando-el-amazonas-4-dias-3-noches"
+        description:
+            "Aventúrate en la selva amazónica y vive una experiencia única donde la biodiversidad, el confort y la emoción se unen.",
+        link: "./tours-irapay-amazon/explorando-el-amazonas-4-dias-3-noches",
     },
     {
         image: "/../tours/iquitosdeaventura.avif",
         title: "Iquitos de Aventura (5D/4N)",
-        description: "Descubre la selva amazónica y vive una experiencia inolvidable donde la exploración, la naturaleza y la emoción convergen.",
-        link: "./tours-irapay-amazon/iquitos-de-aventura-5-dias-4-noches"
-    }
+        description:
+            "Descubre la selva amazónica y vive una experiencia inolvidable donde la exploración, la naturaleza y la emoción convergen.",
+        link: "./tours-irapay-amazon/iquitos-de-aventura-5-dias-4-noches",
+    },
+    {
+        image: "/../tours/explorandoamazonas.avif",
+        title: "Iquitos de Lujo (6D/5N)",
+        description:
+            "Vive una experiencia de lujo en el Amazonas, explorando la selva y la ciudad de Iquitos con el máximo confort.",
+        link: "./tours-irapay-amazon/iquitos-de-lujo-6-dias-5-noches",
+    },
 ];
 ---
+
 <section class="bg-white my-12">
     <div class="max-w-7xl mx-auto px-6 space-y-6">
         <ul class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {tours.map((tour) => (
-            <li class="border-gray-300 text-gray-700 hover:bg-gray-100 rounded-xl border transition-colors duration-200">
-                <article>
-                    <img src={tour.image} alt={tour.title} class="w-full h-80 rounded-t-xl object-cover" loading="lazy" />
-                    <div class="w-full">
-                        <div class="flex flex-col justify-start gap-3 p-4">
-                            <h2 class="text-xl font-bold">
-                                {tour.title}
-                            </h2>
-                            <p class="text-md text-gray-700">
-                                {tour.description}
-                            </p>
-                            <div class="flex items-center gap-4"> 
-                                <a href={tour.link} class="inline-flex">
-                                    <span class="bg-green-950 hover:bg-orange-600 transition-colors duration-300 py-3 px-6 text-sm font-bold text-white rounded-md">
-                                        Ver itinerario
-                                    </span>
-                                </a>
-                                <a href="https://wa.link/kn19ze" target="_blank" class="inline-flex">
-                                    <span class="border border-green-950 text-green-950 hover:bg-orange-600 hover:border-orange-600 hover:text-white transition-colors duration-300 py-3 px-6 text-sm font-bold rounded-md">
-                                        Consultar ahora
-                                        <i class="fa-brands fa-whatsapp fa-xl"></i>
-                                    </span>
-                                </a>
+            {
+                tours.map((tour) => (
+                    <li class="border-gray-300 text-gray-700 hover:bg-gray-100 rounded-xl border transition-colors duration-200">
+                        <article>
+                            <img
+                                src={tour.image}
+                                alt={tour.title}
+                                class="w-full h-80 rounded-t-xl object-cover"
+                                loading="lazy"
+                            />
+                            <div class="w-full">
+                                <div class="flex flex-col justify-start gap-3 p-4">
+                                    <h2 class="text-xl font-bold">
+                                        {tour.title}
+                                    </h2>
+                                    <p class="text-md text-gray-700">
+                                        {tour.description}
+                                    </p>
+                                    <div class="flex items-center gap-4">
+                                        <a href={tour.link} class="inline-flex">
+                                            <span class="bg-green-950 hover:bg-orange-600 transition-colors duration-300 py-3 px-6 text-sm font-bold text-white rounded-md">
+                                                Ver itinerario
+                                            </span>
+                                        </a>
+                                        <a
+                                            href="https://wa.link/kn19ze"
+                                            target="_blank"
+                                            class="inline-flex"
+                                        >
+                                            <span class="border border-green-950 text-green-950 hover:bg-orange-600 hover:border-orange-600 hover:text-white transition-colors duration-300 py-3 px-6 text-sm font-bold rounded-md">
+                                                Consultar ahora
+                                                <i class="fa-brands fa-whatsapp fa-xl" />
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </article>
-            </li>
-            ))}
+                        </article>
+                    </li>
+                ))
+            }
         </ul>
     </div>
 </section>
