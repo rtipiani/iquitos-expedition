@@ -1,6 +1,17 @@
 ---
-const tour = {
-    image: "/../tours/explorandoamazonas.avif",
+interface ItineraryItem {
+    day: string;
+    title: string;
+    parrafo1: string;
+    parrafo2?: string;
+    parrafo3?: string;
+    parrafo4?: string;
+    parrafo5?: string;
+    parrafo6?: string;
+}
+
+const tour: { image: string; title: string; itinerary: ItineraryItem[] } = {
+    image: "/../tours/iquitos6d5n.avif",
     title: "Iquitos de Lujo (6D/5N)",
     itinerary: [
         {
