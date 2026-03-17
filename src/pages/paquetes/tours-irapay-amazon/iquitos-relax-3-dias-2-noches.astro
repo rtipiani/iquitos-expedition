@@ -5,7 +5,26 @@ import Footer from '../../../components/Footer.astro';
 import BreadcrumbIrapay from '../../../components/BreadcrumbIrapay.astro';
 import IrapayTresDias from '../../../components/IrapayAmazon/TresDias.astro';
 ---
-<Layout>
+<Layout
+    title="Iquitos Relax 3 Días 2 Noches - Irapay Lodge | Amazonas"
+    description="Tour relax de 3 días 2 noches en Irapay Amazon Lodge. Disfruta de piscina, gastronomía local y descanso en el corazón del Amazonas peruano."
+    keywords="iquitos relax tour, irapay lodge 3 dias, viaje relajacion amazonas, hotel iquitos tour, desert amazonas"
+    schemaType="Tour"
+    tourDetails={{
+        name: "Iquitos Relax 3 Días 2 Noches",
+        duration: "P3D",
+        durationDays: 3,
+        availability: "https://schema.org/InStock",
+        location: "Irapay Lodge, Iquitos",
+        locationCoords: { lat: -3.7436, lng: -73.2516 },
+        image: [
+            "https://iquitosexpedition.com/galeria-inicial/irapay-amazon-lodge.avif",
+            "https://iquitosexpedition.com/paquetes-recomendados/relax-selva.avif"
+        ],
+        rating: 4.7,
+        reviewCount: 112
+    }}
+>
     <Navbar />
     <BreadcrumbIrapay />
     <IrapayTresDias />

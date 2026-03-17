@@ -5,7 +5,26 @@ import Footer from '../../../components/Footer.astro';
 import BreadcrumbIrapay from '../../../components/BreadcrumbIrapay.astro';
 import IslaDeLosMonosPC from '../../../components/ToursDiarios/IslaDeLosMonos.astro';
 ---
-<Layout>
+<Layout
+    title="Tour Isla de los Monos - Full Day Iquitos"
+    description="Tour diario a la Isla de los Monos desde Iquitos. Avistamiento de fauna, monos y naturaleza. Full day todo incluido en el río Amazonas."
+    keywords="isla de los monos tour, tour isla monos iquitos, monkey island iquitos, daily tour amazon, day trip from iquitos"
+    schemaType="Tour"
+    tourDetails={{
+        name: "Tour Isla de los Monos - Full Day",
+        duration: "PT8H",
+        durationDays: 1,
+        availability: "https://schema.org/InStock",
+        location: "Isla de los Monos, Iquitos",
+        locationCoords: { lat: -3.7436, lng: -73.2516 },
+        image: [
+            "https://iquitosexpedition.com/gallery/gal-ie3.avif",
+            "https://iquitosexpedition.com/gallery/gal-ie4.avif"
+        ],
+        rating: 4.7,
+        reviewCount: 287
+    }}
+>
     <Navbar />
     <BreadcrumbIrapay />
     <IslaDeLosMonosPC />

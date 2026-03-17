@@ -7,8 +7,24 @@ import PacayaSamiriaPackage from "../../components/PacayaSamiria.astro";
 ---
 
 <Layout
-    title="Tours Reserva Nacional Pacaya Samiria | Iquitos Expedition"
-    description="Explora la 'Selva de los Espejos'. Tours de varios días a la Reserva Nacional Pacaya Samiria, el área protegida más grande y biodiversa de la Amazonía."
+    title="Tours Reserva Nacional Pacaya Samiria - Iquitos | Amazonas"
+    description="Tours a Pacaya Samiria desde Iquitos. Explora la 'Selva de los Espejos', el área protegida más grande de la Amazonía. Paquetes de 3 a 8 días en la reserva nacional."
+    keywords="pacaya samiria tours, tour pacaya samiria iquitos, reserva nacional pacaya samiria, selva espejos, amazonas peru, expediciones iquitos, tours amazonas perú"
+    schemaType="Tour"
+    tourDetails={{
+        name: "Tours Reserva Nacional Pacaya Samiria",
+        duration: "PT4DT3H",
+        durationDays: 4,
+        availability: "https://schema.org/InStock",
+        location: "Reserva Nacional Pacaya Samiria, Iquitos, Perú",
+        locationCoords: { lat: -3.7436, lng: -73.2516 },
+        image: [
+            "https://iquitosexpedition.com/breadcrumb/bg-pacayasamiria.avif",
+            "https://iquitosexpedition.com/gallery/gal-ie8.avif"
+        ],
+        rating: 4.8,
+        reviewCount: 234
+    }}
 >
     <Navbar />
     <BreadcrumbPacaya />

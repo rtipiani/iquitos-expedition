@@ -5,7 +5,26 @@ import Footer from '../../../components/Footer.astro';
 import BreadcrumbCumaceba from '../../../components/BreadcrumbCumaceba.astro';
 import CumacebaLodge3D from '../../../components/CumacebaLodges/CumacebaLodge3D.astro';
 ---
-<Layout>
+<Layout
+    title="Cumaceba Lodge 3 Días 2 Noches | Selva Amazónica Tour"
+    description="Tour de 3 días 2 noches en Cumaceba Lodge. Exploración de la selva virgen, caminatas nocturnas y aventura en el Amazonas peruano desde Iquitos."
+    keywords="cumaceba lodge 3 dias, cumaceba amazon tour, jungle lodge iquitos, amazon camp, wild amazon experience"
+    schemaType="Tour"
+    tourDetails={{
+        name: "Cumaceba Lodge 3 Días 2 Noches",
+        duration: "P3D",
+        durationDays: 3,
+        availability: "https://schema.org/InStock",
+        location: "Cumaceba Lodge, Iquitos",
+        locationCoords: { lat: -3.7436, lng: -73.2516 },
+        image: [
+            "https://iquitosexpedition.com/galeria-inicial/cumaceba-lodge.avif",
+            "https://iquitosexpedition.com/breadcrumb/bg-cumaceba.avif"
+        ],
+        rating: 4.6,
+        reviewCount: 98
+    }}
+>
     <Navbar />
     <BreadcrumbCumaceba />
     <CumacebaLodge3D />

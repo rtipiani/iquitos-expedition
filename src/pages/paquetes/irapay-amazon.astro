@@ -7,8 +7,33 @@ import IrapayAmazonPackage from "../../components/IrapayAmazon.astro";
 ---
 
 <Layout
-    title="Irapay Amazon Lodge - Lujo y Confort | Iquitos Expedition"
-    description="Descubre Irapay Amazon Lodge, la combinación perfecta de lujo y selva. Disfruta de piscina, gastronomía local y tours emocionantes."
+    title="Irapay Amazon Lodge - Lujo en la Selva | Tours Amazonas Iquitos"
+    description="Irapay Amazon Lodge: hospedaje de lujo en la selva amazónica cerca de Iquitos. Piscina, gastronomía local y tours todo incluido en el Amazonas peruano."
+    keywords="irapay amazon lodge, irapay lodge iquitos, hoteles iquitos, lodges amazonas iquitos, luxury lodge iquitos, rio amazonas hospedaje, hotel selva amazonica"
+    schemaType="Hotel"
+    lodgeDetails={{
+        name: "Irapay Amazon Lodge",
+        checkInTime: "14:00",
+        checkOutTime: "12:00",
+        amenities: [
+            "Piscina",
+            "Restaurant con gastronomía local",
+            "Bar",
+            "Tours incluidos",
+            "Excursiones guiadas",
+            "Aire acondicionado",
+            "Agua caliente",
+            "Terraza con vista al río",
+            "WiFi"
+        ],
+        image: [
+            "https://iquitosexpedition.com/galeria-inicial/irapay-amazon-lodge.avif",
+            "https://iquitosexpedition.com/breadcrumb/bg-irapay.avif"
+        ],
+        rating: 4.8,
+        reviewCount: 267,
+        starRating: 5
+    }}
 >
     <Navbar />
     <BreadcrumbIrapay />

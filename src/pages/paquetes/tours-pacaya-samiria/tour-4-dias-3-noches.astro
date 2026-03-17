@@ -5,7 +5,26 @@ import Footer from '../../../components/Footer.astro';
 import BreadcrumbPacaya from '../../../components/BreadcrumbPacaya.astro';
 import PacayaSamiria4D from '../../../components/PacayaSamiria/PacayaSamiria4D.astro';
 ---
-<Layout>
+<Layout
+    title="Pacaya Samiria 4 Días 3 Noches | Expedition Amazonas"
+    description="Tour de 4 días 3 noches en Pacaya Samiria. Avistamiento de fauna, canoísmo y naturaleza virgen en la reserva más grande del Perú. Iquitos to Pacaya."
+    keywords="pacaya samiria 4 dias, tour 4 dias pacaya samiria, reserva nacional perú, extended amazon expedition, wildlife tour iquitos"
+    schemaType="Tour"
+    tourDetails={{
+        name: "Pacaya Samiria 4 Días 3 Noches",
+        duration: "P4D",
+        durationDays: 4,
+        availability: "https://schema.org/InStock",
+        location: "Reserva Nacional Pacaya Samiria, Iquitos",
+        locationCoords: { lat: -3.7436, lng: -73.2516 },
+        image: [
+            "https://iquitosexpedition.com/paquetes-recomendados/pacaya-samiria-desde-iquitos.avif",
+            "https://iquitosexpedition.com/gallery/gal-ie8.avif"
+        ],
+        rating: 4.8,
+        reviewCount: 176
+    }}
+>
     <Navbar />
     <BreadcrumbPacaya />
     <PacayaSamiria4D />

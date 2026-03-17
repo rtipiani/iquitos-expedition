@@ -7,8 +7,32 @@ import CumacebaLodgePackage from "../../components/CumacebaLodge.astro";
 ---
 
 <Layout
-    title="Cumaceba Lodge - Experiencia en la Selva | Iquitos Expedition"
-    description="Reserva tu estadía en Cumaceba Lodge. Disfruta de la naturaleza virgen, excursiones en bote y caminatas nocturnas en plena selva amazónica."
+    title="Cumaceba Lodge - Experiencia Selva Amazónica | Iquitos"
+    description="Cumaceba Lodge en Iquitos: estadía en la selva virgen con excursiones en bote, caminatas nocturnas y tours todo incluido. Aventura pura en el Amazonas."
+    keywords="cumaceba lodge, cumaceba iquitos, lodges amazonas, selva amazonica lodge, hospedaje iquitos, jungle experience iquitos, aventura selva amazonia"
+    schemaType="Hotel"
+    lodgeDetails={{
+        name: "Cumaceba Lodge",
+        checkInTime: "14:00",
+        checkOutTime: "12:00",
+        amenities: [
+            "Restaurant",
+            "Tours guiados",
+            "Caminatas nocturnas",
+            "Excursiones en bote",
+            "Naturaleza virgen",
+            "Mosquiteros",
+            "Agua caliente",
+            "Ventiladores"
+        ],
+        image: [
+            "https://iquitosexpedition.com/galeria-inicial/cumaceba-lodge.avif",
+            "https://iquitosexpedition.com/breadcrumb/bg-cumaceba.avif"
+        ],
+        rating: 4.6,
+        reviewCount: 145,
+        starRating: 4
+    }}
 >
     <Navbar />
     <BreadcrumbCumaceba />

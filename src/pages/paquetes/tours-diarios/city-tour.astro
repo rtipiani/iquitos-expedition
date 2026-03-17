@@ -6,7 +6,26 @@ import BreadcrumbTours from "../../../components/BreadcrumbTours.astro";
 import CityTourDetails from "../../../components/ToursDiarios/CityTour.astro";
 ---
 
-<Layout>
+<Layout
+    title="City Tour Iquitos - Centro Histórico | Full Day"
+    description="Tour diario por el centro histórico de Iquitos. Explora arquitectura colonial, museos, mercados y gastronomía. Tour completo en el corazón de la Amazonía."
+    keywords="city tour iquitos, historic center iquitos, iquitos city tour, day trip iquitos, centro historico tour"
+    schemaType="Tour"
+    tourDetails={{
+        name: "City Tour Iquitos - Centro Histórico",
+        duration: "PT8H",
+        durationDays: 1,
+        availability: "https://schema.org/InStock",
+        location: "Centro Histórico, Iquitos",
+        locationCoords: { lat: -3.7436, lng: -73.2516 },
+        image: [
+            "https://iquitosexpedition.com/gallery/gal-ie20.avif",
+            "https://iquitosexpedition.com/gallery/gal-ie21.avif"
+        ],
+        rating: 4.5,
+        reviewCount: 203
+    }}
+>
     <Navbar />
     <BreadcrumbTours />
     <CityTourDetails />

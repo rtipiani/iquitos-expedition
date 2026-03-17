@@ -7,8 +7,24 @@ import ToursDiariosPackage from "../../components/ToursDiarios.astro";
 ---
 
 <Layout
-    title="Tours Diarios y Full Day en Iquitos | Iquitos Expedition"
-    description="Aprovecha al máximo tu tiempo con nuestros tours diarios. Visita la Isla de los Monos, comunidades nativas, mariposarios y navega el Amazonas en un solo día."
+    title="Tours Diarios en Iquitos - Full Day Amazonas | Iquitos Expedition"
+    description="Tours diarios en Iquitos: Isla de los Monos, comunidades nativas, mariposarios y río Amazonas. Excursiones full day todo incluido para aprovechar tu tiempo al máximo."
+    keywords="tours diarios iquitos, excursiones diarias iquitos, full day iquitos, isla de los monos tour, tours día completo amazonas, visit iquitos diario"
+    schemaType="Tour"
+    tourDetails={{
+        name: "Tours Diarios Iquitos - Full Day Amazonas",
+        duration: "PT1D",
+        durationDays: 1,
+        availability: "https://schema.org/InStock",
+        location: "Iquitos, Perú",
+        locationCoords: { lat: -3.7436, lng: -73.2516 },
+        image: [
+            "https://iquitosexpedition.com/gallery/gal-ie1.avif",
+            "https://iquitosexpedition.com/galeria-inicial/cumaceba-lodge.avif"
+        ],
+        rating: 4.7,
+        reviewCount: 125
+    }}
 >
     <Navbar />
     <BreadcrumbTours />

@@ -5,7 +5,25 @@ import Footer from '../../../components/Footer.astro';
 import BreadcrumbPacaya from '../../../components/BreadcrumbPacaya.astro';
 import PacayaSamiria3D from '../../../components/PacayaSamiria/PacayaSamiria3D.astro';
 ---
-<Layout>
+<Layout
+    title="Tour Pacaya Samiria 3 Días 2 Noches | Reserva Nacional"
+    description="Tour de 3 días 2 noches a Pacaya Samiria desde Iquitos. Explora la 'Selva de los Espejos', la reserva nacional más grande de la Amazonía."
+    keywords="pacaya samiria 3 dias, tour reserva nacional pacaya samiria, selva espejos tour, packete amazonas 3 dias, adventure tour peruvian amazon"
+    schemaType="Tour"
+    tourDetails={{
+        name: "Tour Pacaya Samiria 3 Días 2 Noches",
+        duration: "P3D",
+        durationDays: 3,
+        availability: "https://schema.org/InStock",
+        location: "Reserva Nacional Pacaya Samiria, Iquitos",
+        locationCoords: { lat: -3.7436, lng: -73.2516 },
+        image: [
+            "https://iquitosexpedition.com/paquetes-recomendados/pacaya-samiria-desde-iquitos.avif"
+        ],
+        rating: 4.8,
+        reviewCount: 156
+    }}
+>
     <Navbar />
     <BreadcrumbPacaya />
     <PacayaSamiria3D />

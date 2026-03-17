@@ -5,7 +5,26 @@ import Footer from '../../../components/Footer.astro';
 import BreadcrumbIrapay from '../../../components/BreadcrumbIrapay.astro';
 import CreayQuiticochaPC from '../../../components/ToursDiarios/CreayQuiticocha.astro';
 ---
-<Layout>
+<Layout
+    title="Tour Crea y Quiticocha - Lagunas del Amazonas | Full Day"
+    description="Tour diario a las lagunas Crea y Quiticocha desde Iquitos. Avistamiento de fauna, plantas acuáticas y naturaleza en lagos de la Amazonía."
+    keywords="crea y quiticocha tour, amazon lakes tour iquitos, lagoon tour amazon, wildlife lagoons iquitos, water safari amazon"
+    schemaType="Tour"
+    tourDetails={{
+        name: "Tour Crea y Quiticocha - Lagunas",
+        duration: "PT8H",
+        durationDays: 1,
+        availability: "https://schema.org/InStock",
+        location: "Lagunas Crea y Quiticocha, Iquitos",
+        locationCoords: { lat: -3.7436, lng: -73.2516 },
+        image: [
+            "https://iquitosexpedition.com/gallery/gal-ie10.avif",
+            "https://iquitosexpedition.com/gallery/gal-ie11.avif"
+        ],
+        rating: 4.6,
+        reviewCount: 128
+    }}
+>
     <Navbar />
     <BreadcrumbIrapay />
     <CreayQuiticochaPC />

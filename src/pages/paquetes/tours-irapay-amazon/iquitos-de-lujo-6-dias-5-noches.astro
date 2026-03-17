@@ -6,7 +6,26 @@ import BreadcrumbIrapay from "../../../components/BreadcrumbIrapay.astro";
 import IquitosDeLujo6D from "../../../components/IrapayAmazon/IquitosDeLujo6D.astro";
 ---
 
-<Layout>
+<Layout
+    title="Iquitos de Lujo 6 Días 5 Noches | Luxury Amazon Experience"
+    description="Tour de lujo de 6 días 5 noches en Iquitos. Irapay Lodge con servicios premium, gastronomía gourmet y aventuras exclusivas en el Amazonas."
+    keywords="iquitos de lujo 6 dias, luxury amazon tour, irapay lodge luxury, hotel iquitos 5 estrellas, amazon luxury experience"
+    schemaType="Tour"
+    tourDetails={{
+        name: "Iquitos de Lujo 6 Días 5 Noches",
+        duration: "P6D",
+        durationDays: 6,
+        availability: "https://schema.org/InStock",
+        location: "Irapay Lodge, Iquitos, Amazonas",
+        locationCoords: { lat: -3.7436, lng: -73.2516 },
+        image: [
+            "https://iquitosexpedition.com/galeria-inicial/irapay-amazon-lodge.avif",
+            "https://iquitosexpedition.com/paquetes-recomendados/iquitosdelujo.avif"
+        ],
+        rating: 4.9,
+        reviewCount: 189
+    }}
+>
     <Navbar />
     <BreadcrumbIrapay />
     <IquitosDeLujo6D />

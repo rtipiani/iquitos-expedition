@@ -5,7 +5,26 @@ import Footer from '../../../components/Footer.astro';
 import BreadcrumbIrapay from '../../../components/BreadcrumbIrapay.astro';
 import EncantoAmazonicoPC from '../../../components/ToursDiarios/EncantoAmazonico.astro';
 ---
-<Layout>
+<Layout
+    title="El Encanto Amazónico Tour - Full Day | Naturaleza"
+    description="Tour diario 'El Encanto Amazónico' desde Iquitos. Descubre la magia de la selva con caminatas, observación de fauna y experiencia auténtica."
+    keywords="encanto amazonico tour, full day jungle tour iquitos, amazonian magic tour, rainforest experience iquitos, nature immersion amazon"
+    schemaType="Tour"
+    tourDetails={{
+        name: "El Encanto Amazónico - Full Day",
+        duration: "PT8H",
+        durationDays: 1,
+        availability: "https://schema.org/InStock",
+        location: "Selva Amazónica, Iquitos",
+        locationCoords: { lat: -3.7436, lng: -73.2516 },
+        image: [
+            "https://iquitosexpedition.com/tours/encantoamazonico.avif",
+            "https://iquitosexpedition.com/gallery/gal-ie5.avif"
+        ],
+        rating: 4.7,
+        reviewCount: 142
+    }}
+>
     <Navbar />
     <BreadcrumbIrapay />
     <EncantoAmazonicoPC />

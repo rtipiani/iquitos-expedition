@@ -5,7 +5,26 @@ import Footer from '../../../components/Footer.astro';
 import BreadcrumbHeliconia from '../../../components/BreadcrumbHeliconia.astro';
 import MaravillasDeLaAmazonia from '../../../components/HeliconiaLodges/MaravillasDeLaAmazonia.astro';
 ---
-<Layout>
+<Layout
+    title="Descubre Maravillas de la Amazonía 4 Días 3 Noches | Iquitos"
+    description="Tour de 4 días 3 noches explorando las maravillas de la Amazonía desde Heliconia Lodge. Flora, fauna, comunidades nativas y aventuras en la selva de Iquitos."
+    keywords="tour amazonia 4 dias, maravillas amazonia tour, heliconia lodge 4 dias, expedicion amazonas iquitos, selva amazonica tour"
+    schemaType="Tour"
+    tourDetails={{
+        name: "Descubre Maravillas de la Amazonía 4 Días 3 Noches",
+        duration: "P4D",
+        durationDays: 4,
+        availability: "https://schema.org/InStock",
+        location: "Heliconia Lodge, Amazonas",
+        locationCoords: { lat: -3.7436, lng: -73.2516 },
+        image: [
+            "https://iquitosexpedition.com/breadcrumb/bg-heliconia.avif",
+            "https://iquitosexpedition.com/paquetes-recomendados/maravillasdelaamazonia.avif"
+        ],
+        rating: 4.7,
+        reviewCount: 147
+    }}
+>
     <Navbar />
     <BreadcrumbHeliconia />
     <MaravillasDeLaAmazonia />

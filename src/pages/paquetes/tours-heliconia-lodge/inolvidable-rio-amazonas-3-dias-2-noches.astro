@@ -5,7 +5,26 @@ import Footer from '../../../components/Footer.astro';
 import BreadcrumbHeliconia from '../../../components/BreadcrumbHeliconia.astro';
 import InolvidableRioAmazonas from '../../../components/HeliconiaLodges/InolvidableRioAmazonas.astro';
 ---
-<Layout>
+<Layout
+    title="Tour Inolvidable Río Amazonas 3 Días 2 Noches | Iquitos"
+    description="Tour de 3 días 2 noches por el río Amazonas en Iquitos. Explora Heliconia Lodge con guías expertos, avistamiento de fauna y aventura en la selva amazónica."
+    keywords="tour rio amazonas 3 dias, inolvidable rio amazonas, heliconia lodge tour, trip amazonas iquitos, camping amazonas, river expedition"
+    schemaType="Tour"
+    tourDetails={{
+        name: "Inolvidable Río Amazonas 3 Días 2 Noches",
+        duration: "P3D",
+        durationDays: 3,
+        availability: "https://schema.org/InStock",
+        location: "Río Amazonas, Heliconia Lodge, Iquitos",
+        locationCoords: { lat: -3.7436, lng: -73.2516 },
+        image: [
+            "https://iquitosexpedition.com/breadcrumb/bg-heliconia.avif",
+            "https://iquitosexpedition.com/gallery/gal-ie2.avif"
+        ],
+        rating: 4.7,
+        reviewCount: 134
+    }}
+>
     <Navbar />
     <BreadcrumbHeliconia />
     <InolvidableRioAmazonas />

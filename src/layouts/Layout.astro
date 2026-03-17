@@ -3,12 +3,39 @@ interface Props {
 	title?: string;
 	description?: string;
 	image?: string;
+	keywords?: string;
+	schemaType?: "TravelAgency" | "Tour" | "Product" | "Hotel" | "LocalBusiness";
+	tourDetails?: {
+		name?: string;
+		duration?: string;
+		durationDays?: number;
+		availability?: string;
+		location?: string;
+		locationCoords?: { lat: number; lng: number };
+		image?: string[];
+		rating?: number;
+		reviewCount?: number;
+	};
+	lodgeDetails?: {
+		name?: string;
+		checkInTime?: string;
+		checkOutTime?: string;
+		amenities?: string[];
+		image?: string[];
+		rating?: number;
+		reviewCount?: number;
+		starRating?: number;
+	};
 }
 
 const {
 	title = "Iquitos Expedition - Tours al Amazonas Todo Incluido | Agencia Oficial",
 	description = "Vive la mejor experiencia en la selva amazónica con Iquitos Expedition. Tours todo incluido, lodges en el Amazonas, pesca de pirañas, comunidades nativas y más. ¡Reserva hoy!",
 	image = "https://iquitosexpedition.com/imagen_de_previsualizacion.avif",
+	keywords = "tours iquitos, iquitos tours, iquitos travel, turismo iquitos, rio amazonas, Amazon tours, agencia de viajes iquitos",
+	schemaType = "TravelAgency",
+	tourDetails,
+	lodgeDetails,
 } = Astro.props;
 
 const canonicalURL = new URL(
@@ -18,7 +45,8 @@ const canonicalURL = new URL(
 const { url } = Astro;
 const isContactPage = url.pathname.includes("contacts");
 
-const schema = {
+// Base schema for all pages
+const baseSchema = {
 	"@context": "https://schema.org",
 	"@type": "TravelAgency",
 	name: "Iquitos Expedition",
@@ -26,7 +54,8 @@ const schema = {
 	"@id": "https://iquitosexpedition.com",
 	url: "https://iquitosexpedition.com",
 	telephone: "+51968786482",
-	priceRange: "$$",
+	email: "info@iquitosexpedition.com",
+	priceRange: "$$$",
 	address: {
 		"@type": "PostalAddress",
 		streetAddress: "Iquitos",
@@ -47,6 +76,111 @@ const schema = {
 	],
 };
 
+// Tour schema with detailed information
+const tourSchema = tourDetails && {
+	"@context": "https://schema.org",
+	"@type": "Tour",
+	name: tourDetails.name || title,
+	description: description,
+	image: tourDetails.image || [image],
+	provider: {
+		"@type": "TravelAgency",
+		name: "Iquitos Expedition",
+		url: "https://iquitosexpedition.com",
+	},
+	itinerary: {
+		"@type": "ItemList",
+		itemListElement: [
+			{
+				"@type": "Day",
+				name: tourDetails.location || "Amazonas, Perú",
+				description: description,
+			},
+		],
+	},
+	duration: tourDetails.duration || "PT3D",
+	location: {
+		"@type": "Place",
+		name: tourDetails.location || "Amazonas, Perú",
+		geo: tourDetails.locationCoords ? {
+			"@type": "GeoCoordinates",
+			latitude: tourDetails.locationCoords.lat,
+			longitude: tourDetails.locationCoords.lng,
+		} : undefined,
+	},
+	...(tourDetails.rating && {
+		aggregateRating: {
+			"@type": "AggregateRating",
+			ratingValue: tourDetails.rating,
+			reviewCount: tourDetails.reviewCount || 1,
+		},
+	}),
+};
+
+// Product schema for tours (alternative to Tour)
+const productTourSchema = tourDetails && {
+	"@context": "https://schema.org",
+	"@type": "Product",
+	name: tourDetails.name || title,
+	description: description,
+	image: tourDetails.image || [image],
+	brand: {
+		"@type": "Brand",
+		name: "Iquitos Expedition",
+	},
+	...(tourDetails.rating && {
+		aggregateRating: {
+			"@type": "AggregateRating",
+			ratingValue: tourDetails.rating,
+			reviewCount: tourDetails.reviewCount || 1,
+		},
+	}),
+};
+
+// Hotel schema for lodges
+const hotelSchema = lodgeDetails && {
+	"@context": "https://schema.org",
+	"@type": "Hotel",
+	name: lodgeDetails.name || title,
+	description: description,
+	image: lodgeDetails.image || [image],
+	address: {
+		"@type": "PostalAddress",
+		addressLocality: "Iquitos",
+		addressRegion: "Loreto",
+		addressCountry: "PE",
+	},
+	checkinTime: lodgeDetails.checkInTime || "14:00",
+	checkoutTime: lodgeDetails.checkOutTime || "12:00",
+	amenityFeature: lodgeDetails.amenities?.map(amenity => ({
+		"@type": "LocationFeatureSpecification",
+		name: amenity,
+	})) || [],
+	petsAllowed: false,
+	...(lodgeDetails.rating && {
+		aggregateRating: {
+			"@type": "AggregateRating",
+			ratingValue: lodgeDetails.rating,
+			reviewCount: lodgeDetails.reviewCount || 1,
+			bestRating: 5,
+			worstRating: 1,
+		},
+	}),
+	...(lodgeDetails.starRating && {
+		starRating: {
+			"@type": "Rating",
+			ratingValue: lodgeDetails.starRating,
+		},
+	}),
+};
+
+// Determine which schema to use
+const schema = schemaType === "Tour" && tourSchema
+	? tourSchema
+	: schemaType === "Hotel" && hotelSchema
+	? hotelSchema
+	: baseSchema;
+
 import "../styles/global.css";
 import SpeedInsights from "@vercel/speed-insights/astro";
 ---
@@ -66,6 +200,7 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
 		<link rel="canonical" href={canonicalURL} />
 
 		<meta property="og:site_name" content="Iquitos Expedition" />

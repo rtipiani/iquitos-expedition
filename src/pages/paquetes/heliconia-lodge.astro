@@ -7,8 +7,32 @@ import HeliconiaLodgePackage from "../../components/HeliconiaLodge.astro";
 ---
 
 <Layout
-    title="Heliconia Amazon River Lodge | Iquitos Expedition"
-    description="Hospédate en Heliconia Lodge, un refugio exclusivo en el río Amazonas. Confort, aventura y biodiversidad te esperan en esta experiencia única."
+    title="Heliconia Amazon River Lodge - Hospedaje en el Amazonas | Iquitos"
+    description="Heliconia Amazon River Lodge: hospedaje exclusivo en el río Amazonas cerca de Iquitos. Tours todo incluido con biodiversidad, confort y aventura en la selva peruana."
+    keywords="heliconia lodge, heliconia amazon river lodge, lodges iquitos, hospedaje amazonas iquitos, hotel rio amazonas, accommodations amazonas, jungle lodge iquitos"
+    schemaType="Hotel"
+    lodgeDetails={{
+        name: "Heliconia Amazon River Lodge",
+        checkInTime: "14:00",
+        checkOutTime: "12:00",
+        amenities: [
+            "Restaurant",
+            "Bar",
+            "Tours guiados",
+            "Caminatas nocturnas",
+            "Observación de fauna",
+            "Aire acondicionado",
+            "Agua caliente",
+            "WiFi limitado"
+        ],
+        image: [
+            "https://iquitosexpedition.com/galeria-inicial/heliconia-amazon-river-lodge.avif",
+            "https://iquitosexpedition.com/breadcrumb/bg-heliconia.avif"
+        ],
+        rating: 4.7,
+        reviewCount: 189,
+        starRating: 4
+    }}
 >
     <Navbar />
     <BreadcrumbHeliconia />
