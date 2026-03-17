@@ -208,9 +208,10 @@ Valida los cambios en:
 
 Pegá el URL de la página o el código HTML para validar.
 
+
 ## Beneficios de Implementar Schema.org
 
-1. **Rich Snippets**: 
+1. **Rich Snippets**:
    - Precios visibles en resultados de búsqueda
    - Calificaciones (stars, reviews)
    - Duración y ubicación del tour
@@ -224,6 +225,7 @@ Pegá el URL de la página o el código HTML para validar.
    - Mejor CTR (click-through rate)
    - Mejor posicionamiento
    - Información más relevante en SERPs
+
 
 ## Páginas Actualmente Optimizadas
 
